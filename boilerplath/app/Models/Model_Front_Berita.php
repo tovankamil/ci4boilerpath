@@ -18,7 +18,7 @@ class Model_Front_Berita extends Model
      {
          $data=array();
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select id_berita,judul_seo,judul,gambar,tanggal
          from berita where status='0' and fokus_berita='y'  order by tanggal desc limit 1");
     array_push($data, $query->getResult('array'));
@@ -32,7 +32,7 @@ class Model_Front_Berita extends Model
     function runningtext()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select id_berita,judul_seo,judul,gambar
          from berita where status='0' and running_text='y'  order by tanggal desc ");
         return $query->getResultArray();
@@ -41,7 +41,7 @@ class Model_Front_Berita extends Model
     function beritautama()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select id_berita,judul_seo,judul,gambar
          from berita where status='0' and fokus_berita='t' and running_text='t'  order by tanggal desc limit 12  ");
         return $query->getResultArray();
@@ -50,7 +50,7 @@ class Model_Front_Berita extends Model
     function beritaterbaru()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select a.id_berita as berita,a.tanggal as tanggal,a.judul_seo as judul_seo,a.judul as judul,a.gambar as gambar,b.nama_kategori AS kategoriberita
          from berita a inner join kategori b on a.id_kategori = b.id where a.status='0' and a.fokus_berita='t' and a.running_text='t'   order by tanggal desc  LIMIT 12,6");
         return $query->getResultArray();
@@ -59,7 +59,7 @@ class Model_Front_Berita extends Model
     function beritatrending()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select a.id_berita as berita,a.tanggal as tanggal,a.judul_seo as judul_seo,a.judul as judul,a.gambar as gambar,b.nama_kategori AS kategoriberita
          from berita a inner join kategori b on a.id_kategori = b.id where a.status='0' and a.fokus_berita='t' and a.running_text='t'   order by dibaca desc  LIMIT 8");
         return $query->getResultArray();
@@ -70,7 +70,7 @@ class Model_Front_Berita extends Model
     function allberita()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select id_berita,judul_seo,judul,gambar,isi,tanggal,peliput
          from berita where status='0'  order by tanggal desc ");
         return $query->getResultArray();
@@ -78,7 +78,7 @@ class Model_Front_Berita extends Model
     function beritaById($id)
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select id_berita,judul_seo,judul,gambar,isi,tanggal,peliput
          from berita where status='0' and id_berita ='$id'  order by tanggal desc limit 1 ");
         return $query->getResultArray();

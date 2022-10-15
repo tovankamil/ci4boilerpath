@@ -15,7 +15,7 @@ class Model_Admin_Editprofile extends Model
     function caridatamitra($id)
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select *
          from tfn_admin_anggota where username='$id'
         order by id desc limit 1 ");

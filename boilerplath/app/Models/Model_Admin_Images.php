@@ -15,7 +15,6 @@ class Model_Admin_Images extends Model
     function allimages()
     {
         $db = $this->connectDatabase();
-        // data member
         $query = $db->query("select id,slug,judul,gambar,keterangan,tanggal,fotografer
          from images where status='0'  order by tanggal desc ");
         //$db->close();
@@ -24,7 +23,6 @@ class Model_Admin_Images extends Model
     function imagesById($id)
     {
         $db = $this->connectDatabase();
-        // data member
         $query = $db->query("select id,slug,judul,gambar,keterangan,tanggal,fotografer
          from images where status='0' and id ='$id'  order by tanggal desc limit 1 ");
         //$db->close();

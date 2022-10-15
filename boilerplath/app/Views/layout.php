@@ -68,7 +68,7 @@
                     <a class="" aria-current="page" href="<?php echo base_url()?>/kategori/ekonomi"> Ekonomi </a>
                 </li>
                 <li class="whitespace-nowrap font-semibold p-1 mx-auto text-xs hover:text-blue-200">
-                    <a class="" aria-current="page" href="<?php echo base_url()?>/kategori/"> Olahraga </a>
+                    <a class="" aria-current="page" href="<?php echo base_url()?>/kategori/olahraga"> Olahraga </a>
                 </li>
                 <li class="whitespace-nowrap font-semibold p-1 mx-auto text-xs hover:text-blue-200">
                     <a class="" aria-current="page" href="<?php echo base_url()?>/kategori/teknologi"> Teknologi </a>

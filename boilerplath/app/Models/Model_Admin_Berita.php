@@ -15,17 +15,17 @@ class Model_Admin_Berita extends Model
     function allberita()
     {
         $db = $this->connectDatabase();
-        // data member
-        $query = $db->query("select id_berita,judul_seo,judul,gambar,isi,tanggal,peliput
-         from berita where status='0'  order by tanggal desc ");
+
+        $query = $db->query("select id_berita,judul_seo,judul,gambar,isi,tanggal,peliput,dibaca,fokus_berita,running_text
+         from berita where status='0'  order by tanggal desc limit 500 ");
         //$db->close();
         return $query->getResultArray();
     }
     function beritaById($id)
     {
         $db = $this->connectDatabase();
-        // data member
-        $query = $db->query("select id_berita,judul_seo,judul,gambar,isi,tanggal,peliput
+
+        $query = $db->query("select id_berita,id_kategori,judul_seo,judul,gambar,isi,tanggal,peliput,dibaca,fokus_berita,running_text,tag
          from berita where status='0' and id_berita ='$id'  order by tanggal desc limit 1 ");
         //$db->close();
         return $query->getResultArray();

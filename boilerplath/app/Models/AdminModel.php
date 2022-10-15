@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AdminModel extends Model
 {
     protected $table = 'users';
-    protected $allowedFields = ['username', 'password'];
+    protected $allowedFields = ['username', 'password_hash'];
 
     function getDataUser($id)
     {
@@ -24,9 +24,8 @@ class AdminModel extends Model
     function getDataOffice()
     {
         $db = $this->connectDatabase();
-        // data member
+
         $query = $db->query("select * from tfn_core_web_name");
-        //$db->close();
         return $query->getResultArray();
     }
 
@@ -35,19 +34,19 @@ class AdminModel extends Model
 
         $db = $this->connectDatabase();
         // data password
-        $query = $db->query("select password from users where username='$id'");
+        $query = $db->query("select password_hash from users where username='$id'");
 
-        //$db->close();
         return $query->getResultArray();
     }
 
-    function KartuId()
+    function update_login_at($id)
     {
+
         $db = $this->connectDatabase();
         // data password
-        $query = $db->query("select password from users where username='$id'");
+        $query = $db->query("update users set log_in='2022-10-14 22:51:58' where username='$id'");
 
-        //$db->close();
         return $query->getResultArray();
     }
+
 }

@@ -45,7 +45,7 @@
                       <?php foreach ($beritautama as $value) { ?>
                           <div class="px-2">
                               <div class="box-images">
-                                  <img src="https://jakartainsight.com/upload/medium/<?php echo $value['gambar'] ?>" alt="..." />
+                                  <img src="https://jakartainsight.com/upload/medium/<?php echo $value['gambar'] ?>" alt="" />
                               </div>
                               <div class="title">
                                   <a href="<?php echo base_url() ?>/berita/detail/<?php echo $value['judul_seo'] ?>">

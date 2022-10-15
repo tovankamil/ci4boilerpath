@@ -23,6 +23,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'adminotentikasi' => \App\Filters\Adminotentikasi::class,
+        'stokistotentikasi' => \App\Filters\Stokistotentikasi::class
     ];
 
     /**

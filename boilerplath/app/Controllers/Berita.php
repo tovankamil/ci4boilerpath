@@ -13,9 +13,15 @@ class Berita extends BaseController
     public function detail($id=null)
     {
         $model = new Model_Front_Detail_Berita();
-        $data['highlight'] = $model->detailberita($id);
+        $data['detailberita'] = $model->detailberita($id);
         // berita running text
         $data['runningtext'] = $model->runningtext();
+        // // berita terbaru
+        $data['beritaterbaru'] = $model->beritaterbaru();
+        // // berita utama
+
+         // berita trending
+        $data['beritatrending'] = $model->beritatrending();
         return view('berita',$data);
     }
 
